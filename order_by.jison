@@ -12,7 +12,8 @@
 
 /lex
 
-%left ',' '.'
+%left ','
+%right '.'
 
 %start clause
 
