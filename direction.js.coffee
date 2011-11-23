@@ -15,7 +15,7 @@ class Direction
       when Direction.ASC then 'ASC'
       else ''
 
-  constructor: (direction = Direction.ASC) -> @setDirection direction
+  constructor: (direction = Direction.ASC) -> @set direction
 
   set: (direction) -> @direction = Direction.numValueOf(direction) ; this
 
@@ -24,6 +24,4 @@ class Direction
   valueOf: -> @toString()
 
   toString: -> Direction.strValueOf @direction
-
-  setDirection: (direction) -> @direction = Direction.numValueOf(direction) ; this
 
