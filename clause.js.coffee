@@ -6,4 +6,4 @@ class Clause
 
   valueOf: -> @toString()
 
-  toString: -> ("#{column}" for column in @order_by).join(', ')
+  toString: -> @order_by.join ', '
