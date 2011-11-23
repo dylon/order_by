@@ -31,18 +31,13 @@ columns: column {
        }
        ;
 
-column: fully_qualified_name {
-        $$ = $1;
+column: IDENTIFIER '.' IDENTIFIER direction {
+        $$ = new Column($3, $4, $1);
       }
       | IDENTIFIER direction {
         $$ = new Column($1, $2);
       }
       ;
-
-fully_qualified_name: IDENTIFIER '.' IDENTIFIER direction {
-                      $$ = new Column($3, $4, $1);
-                    }
-                    ;
 
 direction: /* ϵ */ {
            $$ = new Direction();
